@@ -1,2 +1,2 @@
 # GeometryDash
-Geometry Dash game for my proposal final project.
+Geometry Dash game for my final proposal project.
