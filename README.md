@@ -1,4 +1,5 @@
 # Geometry Dash
+<img src="https://github.com/Kensukeken/GeometryDash/assets/85637598/908d9102-651a-4363-a656-9fcb508eb4ce" alt="image" width="1000">
 
 ## Introduction
 
@@ -51,6 +52,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Special thanks to the developers of the Java Swing library.
 
 Have fun playing Geometry Dash!
-```
 
+```css
 Save the above content in a file named `README.md` in your project's root directory.
+```
