@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 
+// Class representing the player's cube
 class Cube {
     private static final int ROTATION_LIMIT = 90;
 
@@ -17,6 +18,7 @@ class Cube {
 
     private boolean isRotating;
 
+    // Constructor for initializing the cube
     public Cube(ZRect floor) {
         this.floor = floor;
         width = 50;
@@ -30,6 +32,7 @@ class Cube {
         isRotating = false;
     }
 
+    // Method for cube jump action
     public void jump() {
         if (y + height >= floor.getY()) {
             ySpeed = -16;
@@ -38,6 +41,7 @@ class Cube {
         y += ySpeed;
     }
 
+    // Method for updating cube position and rotation
     public void update() {
         if (y + height < floor.getY()) {
             ySpeed += GeometryDash.GRAVITY;
@@ -54,6 +58,7 @@ class Cube {
         }
     }
 
+    // Method for drawing the cube
     public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         AffineTransform oldTransform = g2d.getTransform();
@@ -65,6 +70,7 @@ class Cube {
         g2d.setTransform(oldTransform);
     }
 
+    // Getter methods for cube position and size
     public int getX() {
         return x;
     }
