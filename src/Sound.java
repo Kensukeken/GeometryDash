@@ -8,15 +8,16 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.FloatControl;
 
-class Sound extends JFrame implements ActionListener {
+class Sound extends JFrame implements ActionListener
+{
     JButton btn = new JButton("Play Sound");
-    SoundEffect Sound;
+    SoundEffect sound;
     LinkedList<SoundEffect>sounds;
     float volume=-30, dv=5;
 
     public Sound()
     {
-        sounds = new LinkedList<SoundEffect>();
+        sounds = new LinkedList();
         setSize(300,100);
         setLocation(400,300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -26,7 +27,7 @@ class Sound extends JFrame implements ActionListener {
         add(jp);
         pack();
         for(int i =0; i<10; i++){
-            sounds.add(new SoundEffect("bottle-open.wav"));
+            sounds.add(new SoundEffect("geometry-dash-menu.wav"));
         }
     }
 
@@ -40,6 +41,7 @@ class Sound extends JFrame implements ActionListener {
         gainControl.setValue(volume);
         System.out.println(volume);
         sound.play();
+        sound.stop();
         sounds.remove(0);
         sounds.add(sound);
     }
