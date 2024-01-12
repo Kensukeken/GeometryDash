@@ -149,11 +149,18 @@ public class GeometryDash extends JPanel implements ActionListener {
 
     private void drawGameOver(Graphics g) {
         g.setColor(Color.WHITE);
-        g.setFont(new Font("Arial", Font.PLAIN, 40));
-        g.drawString("Game Over!", 250, 200);
-        g.drawString("Your Score: " + score, 225, 300);
-        g.drawString("Press 'R' key to play again. ",130, 400 );
+
+        Font titleFont = new Font("Arial", Font.BOLD, 50);
+        Font textFont = new Font("Arial", Font.PLAIN, 30);
+
+        g.setFont(titleFont);
+        g.drawString("Game Over!", 200, 150);
+
+        g.setFont(textFont);
+        g.drawString("Your Score: " + score, 250, 250);
+        g.drawString("Press 'R' to play again.", 200, 350);
     }
+
 
     public void actionPerformed(ActionEvent e) {
         if (!dead) {
