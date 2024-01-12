@@ -33,7 +33,7 @@ class Cube {
 
     public void jump() {
         if (y + height >= floor.getY()) {
-            ySpeed = -15;
+            ySpeed = -20;
             isRotating = true;
         }
         y += ySpeed;
@@ -43,7 +43,6 @@ class Cube {
         if (y + height < floor.getY()) {
             ySpeed += GeometryDash.GRAVITY;
             y += ySpeed;
-            x += xSpeed;
         } else {
             y = -height + floor.getY();
             ySpeed = 0;

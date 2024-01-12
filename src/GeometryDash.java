@@ -1,5 +1,5 @@
 /* This file represents the GeometryDash.java.
-* */
+ * */
 package src;
 
 import javax.swing.*;
@@ -20,8 +20,8 @@ public class GeometryDash extends JPanel implements ActionListener {
 
     public static final int GRAVITY = 1;
 
-    public static final int TIME_TICK = 8;
-    public static final int LOGO_SCREEN_DURATION = 1000;
+    public static final int TIME_TICK = 2;
+    public static final int LOGO_SCREEN_DURATION = 5000; // Added 5 seconds before the game starts
 
     private Timer timer;
     private int attempt;
@@ -73,7 +73,6 @@ public class GeometryDash extends JPanel implements ActionListener {
         });
         logoTimer.setRepeats(false);
         logoTimer.start();
-
 
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
@@ -181,15 +180,13 @@ public class GeometryDash extends JPanel implements ActionListener {
             dead = true;
         }
         if (spike.getX() + spike.getWidth() <= 0) {
-            spike.setX(WIDTH + 5);
-        } else if (spike.getX() + spike.getWidth() <= 1){
-            spike.setX(WIDTH + 3);
+            spike.setX(WIDTH + 10);
         }
     }
 
     private void resetGame() {
         for (Actor spike : spikes) {
-            spike.setX(WIDTH + 5);
+            spike.setX(WIDTH + 200);
         }
         score = 0;
         attempt++;
