@@ -5,12 +5,11 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 
 class Cube {
-    private static final int ROTATION_LIMIT = 90;
+    private static final int ROTATION_LIMIT = 95;
 
     private int x, y;
     private int width, height;
     private int ySpeed;
-    private double xSpeed;
     private int angle;
     private Image cubeImage;
     private ZRect floor;
@@ -24,7 +23,6 @@ class Cube {
         x = 50;
         y = 340 - height;
         ySpeed = 0;
-        xSpeed = 0;
         angle = 0;
 
         cubeImage = new ImageIcon("images/square.jpg").getImage();
@@ -33,7 +31,7 @@ class Cube {
 
     public void jump() {
         if (y + height >= floor.getY()) {
-            ySpeed = -20;
+            ySpeed = -16;
             isRotating = true;
         }
         y += ySpeed;
