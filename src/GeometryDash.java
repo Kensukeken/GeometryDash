@@ -21,7 +21,7 @@ public class GeometryDash extends JPanel implements ActionListener {
     public static final int GRAVITY = 1;
 
     public static final int TIME_TICK = 2;
-    public static final int LOGO_SCREEN_DURATION = 5000; // Added 5 seconds before the game starts
+    public static final int LOGO_SCREEN_DURATION = 5000;
 
     private Timer timer;
     private int attempt;
@@ -61,11 +61,9 @@ public class GeometryDash extends JPanel implements ActionListener {
         cube = new Cube(floor);
 
         timer = new Timer(TIME_TICK, this);
-
         logoTimer = new Timer(LOGO_SCREEN_DURATION, e -> {
             showLogo = false;
             repaint();
-
             // Start a timer for the delay before starting the game
             startGameTimer = new Timer(1000, startGameActionListener);
             startGameTimer.setRepeats(false);
