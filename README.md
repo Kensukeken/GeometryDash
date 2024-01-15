@@ -10,7 +10,7 @@ Welcome to Geometry Dash, a simple Java game created using the Swing library in 
 ### Prerequisites
 
 - Make sure you have Java installed on your machine.
-- You need to download IntelliJ IDEA to run this code.
+- You need to download IntelliJ IDEA or VSCode to run this program.
 
 
 ### Installation
@@ -51,6 +51,19 @@ These are the files located in the `src` folder.
 
 ## Acknowledge 
 
+Our sincere thanks to the contributors and communities that have played a vital role in shaping Geometry Dash:
+
+- **Developers**: The creative minds who brought Geometry Dash to life.
+  
+- **Open Source Community**: For invaluable resources and support that enhanced the game.
+
+- **Designers & Sound Engineers**: The talented individuals responsible for the captivating visuals and immersive audio.
+
+- **Beta Testers**: Appreciation for meticulous testing and valuable feedback.
+
+- **Community Contributors**: Everyone who shared ideas and actively participated in discussions.
+
+Geometry Dash is a collaborative effort, and your contributions have been instrumental in making the game what it is today.
 
 
 ### Have fun playing Geometry Dash! 
