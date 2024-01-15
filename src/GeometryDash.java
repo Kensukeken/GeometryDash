@@ -152,7 +152,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         g.setFont(new Font("Arial", Font.PLAIN, 40));
         g.drawString("Game Over!", 250, 200);
         g.drawString("Your Score: " + score, 225, 300);
-        g.drawString("Press 'R' key to play again. ",130, 400 );
+        g.drawString("Press 'R' key to play again. ", 130, 400);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -180,7 +180,9 @@ public class GeometryDash extends JPanel implements ActionListener {
             dead = true;
         }
         if (spike.getX() + spike.getWidth() <= 0) {
-            spike.setX(WIDTH + 10);
+            spike.setX(WIDTH + new java.util.Random().nextInt(200));
+            float speedFactor = 1.5f;
+            spike.setSpeed(spike.getSpeed() * speedFactor);
         }
     }
 

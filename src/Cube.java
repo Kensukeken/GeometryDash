@@ -20,7 +20,7 @@ class Cube {
         this.floor = floor;
         width = 50;
         height = 50;
-        x = 50;
+        x = 60;
         y = 340 - height;
         ySpeed = 0;
         angle = 0;

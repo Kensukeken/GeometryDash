@@ -1,5 +1,6 @@
 package src;
 
+import src.Cube;
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,6 +9,7 @@ class Actor {
     private int width, height;
     private int xSpeed;
     private Image image;
+    private float speed;
 
     public Actor(String imageName, int x, int y) {
         this.x = x;
@@ -56,5 +58,13 @@ class Actor {
 
     public void setX(int x) {
         this.x = x;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
+
+    public float getSpeed() { // Add this method
+        return speed;
     }
 }
