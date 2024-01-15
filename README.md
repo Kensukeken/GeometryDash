@@ -37,6 +37,7 @@ Welcome to Geometry Dash, a simple Java game created using the Swing library in 
 
 - Customize the game graphics by replacing the images in the `images` folder.
 - Scripts are listed on `src` folder.
+- Volume and sounds are listed on `sounds` folder.
 
 ### Files 
 These are the files located in the `src` folder.
@@ -46,6 +47,7 @@ These are the files located in the `src` folder.
 - **Cube.java**: Class representing the player's cube.
 - **Actor.java**: Class representing in-game actors, like spikes.
 - **ZRect.java**: Class representing a simple rectangle in cube class.
+- **Sound.java**: Class representing a sound in the game.
 
 ## Acknowledge 
 
