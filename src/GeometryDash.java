@@ -64,7 +64,6 @@ public class GeometryDash extends JPanel implements ActionListener {
         logoTimer = new Timer(LOGO_SCREEN_DURATION, e -> {
             showLogo = false;
             repaint();
-            // Start a timer for the delay before starting the game
             startGameTimer = new Timer(1000, startGameActionListener);
             startGameTimer.setRepeats(false);
             startGameTimer.start();
@@ -158,7 +157,6 @@ public class GeometryDash extends JPanel implements ActionListener {
         g.drawString("Your Score: " + score, 250, 250);
         g.drawString("Press 'R' to play again.", 200, 350);
     }
-
 
     public void actionPerformed(ActionEvent e) {
         if (!dead) {
