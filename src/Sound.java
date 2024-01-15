@@ -20,7 +20,7 @@ class Sound extends JFrame implements ActionListener {
         add(jp);
         pack();
         for (int i = 0; i < 10; i++) {
-            sounds.add(new SoundEffect("stereo-madness-geometry-dash"));
+            sounds.add(new SoundEffect("stereo-madness-geometry-dash.wav"));
         }
     }
 

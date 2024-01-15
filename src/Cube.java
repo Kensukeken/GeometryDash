@@ -31,7 +31,7 @@ class Cube {
 
     public void jump() {
         if (y + height >= floor.getY()) {
-            ySpeed = -16;
+            ySpeed = -17;
             isRotating = true;
         }
         y += ySpeed;
@@ -51,7 +51,7 @@ class Cube {
                 }
             }
             AffineTransform rot = new AffineTransform();
-            rot.rotate(angle,90,90);
+            rot.rotate(angle, 90, 90);
         }
     }
 
