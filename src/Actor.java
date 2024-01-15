@@ -1,6 +1,5 @@
 package src;
 
-import src.Cube;
 import javax.swing.*;
 import java.awt.*;
 
@@ -64,7 +63,7 @@ class Actor {
         this.speed = speed;
     }
 
-    public float getSpeed() { // Add this method
+    public float getSpeed() {
         return speed;
     }
 }
