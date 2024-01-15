@@ -107,7 +107,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         super.paint(g);
 
         if (showLogo) {
-            drawLogoScreen(g);
+            LogoScreen(g);
         } else {
             Image bufferImage = createImage(WIDTH, HEIGHT);
             Graphics bufferGraphics = bufferImage.getGraphics();
@@ -123,7 +123,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         }
     }
 
-    private void drawLogoScreen(Graphics g) {
+    private void LogoScreen(Graphics g) {
         int x = (getWidth() - scaledLogo.getWidth(this)) / 2;
         int y = (getHeight() - scaledLogo.getHeight(this)) / 2;
         g.drawImage(scaledLogo, x, y, this);

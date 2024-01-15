@@ -6,7 +6,6 @@ import java.util.*;
 import javax.sound.sampled.FloatControl;
 
 class Sound extends JFrame implements ActionListener {
-    JButton btn = new JButton("Play Sound");
     SoundEffect sound;
     private LinkedList<SoundEffect> sounds;
     float volume = -30, dv = 5;
@@ -15,8 +14,6 @@ class Sound extends JFrame implements ActionListener {
         setSize(300, 100);
         setLocation(400, 300);
         JPanel jp = new JPanel();
-        btn.addActionListener(this);
-        jp.add(btn);
         add(jp);
         pack();
         for (int i = 0; i < 10; i++) {
