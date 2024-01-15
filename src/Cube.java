@@ -10,7 +10,6 @@ class Cube {
     private int x, y;
     private int width, height;
     private int ySpeed;
-    private double xSpeed;
     private int angle;
     private Image cubeImage;
     private ZRect floor;
@@ -24,7 +23,6 @@ class Cube {
         x = 50;
         y = 340 - height;
         ySpeed = 0;
-        xSpeed = 0;
         angle = 0;
 
         cubeImage = new ImageIcon("images/square.jpg").getImage();
@@ -53,7 +51,7 @@ class Cube {
                 }
             }
             AffineTransform rot = new AffineTransform();
-            rot.rotate(angle,90,90);
+            rot.rotate(angle, 90, 90);
         }
     }
 
