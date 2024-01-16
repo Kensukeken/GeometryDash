@@ -1,5 +1,4 @@
-/* This file represents the GeometryDash.java.
- * */
+/* This program represents the GeometryDash game. */
 package src;
 
 import javax.swing.*;
@@ -15,53 +14,57 @@ import java.util.List;
 
 public class GeometryDash extends JPanel implements ActionListener {
 
+    // Constants for the game window dimensions and physics
     public static final int WIDTH = 737;
     public static final int HEIGHT = 545;
-
     public static final int GRAVITY = 1;
-
     public static final int TIME_TICK = 2;
     public static final int LOGO_SCREEN_DURATION = 5000; // Added 5 seconds before the game starts
 
+    // Game variables
     private Timer timer;
     private int attempt;
     private boolean dead;
     private int score;
 
+    // Sound and game elements
+    private Sound sound;
     private Cube cube;
     private List<Actor> spikes;
 
+    // Background and floor elements
     private Image background;
     private ZRect floor;
 
+    // Logo screen elements
     private Image logo;
     private boolean showLogo = true;
-
     private Timer logoTimer;
     private Timer startGameTimer;
-
     private Image scaledLogo;
 
+    // Constructor for the GeometryDash class
     public GeometryDash() {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         setFocusable(true);
-
         setBackground(Color.blue);
 
         spikes = new ArrayList<>();
 
+        // Load images for background and logo
         background = new ImageIcon("images/background.png").getImage();
         logo = new ImageIcon("images/geometrydash_logo.png").getImage();
         scaleLogo();
 
+        // Initialize spikes, floor, cube, timer, and sound
         spikes.add(new Actor("images/spike.png", 550, 310));
         spikes.add(new Actor("images/spike.png", 700, 310));
-
         floor = new ZRect(0, 340, WIDTH, 3);
         cube = new Cube(floor);
-
         timer = new Timer(TIME_TICK, this);
+        sound = new Sound();
 
+        // Set up logo screen timer
         logoTimer = new Timer(LOGO_SCREEN_DURATION, e -> {
             showLogo = false;
             repaint();
@@ -74,6 +77,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         logoTimer.setRepeats(false);
         logoTimer.start();
 
+        // Add key and mouse listeners
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 KeyPressed(e);
@@ -88,24 +92,30 @@ public class GeometryDash extends JPanel implements ActionListener {
         });
     }
 
+    // Method to scale the logo image
     private void scaleLogo() {
         int scaledWidth = 737;
         int scaledHeight = 515;
         scaledLogo = logo.getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_SMOOTH);
     }
 
+    // Method to handle mouse clicks
     private void MouseClick() {
         cube.jump();
+        sound.playSound("StereoMadness.wav");
     }
 
+    // Method to handle key presses
     private void KeyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE && !dead) {
             cube.jump();
+            sound.playSound("StereoMadness.wav");
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
             resetGame();
         }
     }
 
+    // Method to paint the game components
     public void paint(Graphics g) {
         super.paint(g);
 
@@ -126,12 +136,14 @@ public class GeometryDash extends JPanel implements ActionListener {
         }
     }
 
+    // Method to draw the logo screen
     private void drawLogoScreen(Graphics g) {
         int x = (getWidth() - scaledLogo.getWidth(this)) / 2;
         int y = (getHeight() - scaledLogo.getHeight(this)) / 2;
         g.drawImage(scaledLogo, x, y, this);
     }
 
+    // Method to draw the game components
     private void drawGame(Graphics g) {
         g.setColor(Color.WHITE);
         g.fillRect(floor.getX(), floor.getY(), floor.getWidth(), floor.getHeight());
@@ -147,6 +159,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         g.drawString("Attempt: " + attempt, 600, 40);
     }
 
+    // Method to draw the game over screen
     private void drawGameOver(Graphics g) {
         g.setColor(Color.WHITE);
         g.setFont(new Font("Arial", Font.PLAIN, 40));
@@ -155,6 +168,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         g.drawString("Press 'R' key to play again. ", 130, 400);
     }
 
+    // Method to handle action events (timer ticks)
     public void actionPerformed(ActionEvent e) {
         if (!dead) {
             updateGame();
@@ -162,6 +176,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         }
     }
 
+    // Method to update the game state
     private void updateGame() {
         cube.update();
         for (Actor spike : spikes) {
@@ -174,6 +189,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         score++;
     }
 
+    // Method to update spike movement and check for collisions
     private void Spike(Actor spike) {
         spike.update();
         if (spike.collidesWith(cube)) {
@@ -186,6 +202,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         }
     }
 
+    // Method to reset the game state
     private void resetGame() {
         for (Actor spike : spikes) {
             spike.setX(WIDTH + 200);
@@ -195,6 +212,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         dead = false;
     }
 
+    // Action listener for the timer before starting the game
     private ActionListener startGameActionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -202,10 +220,13 @@ public class GeometryDash extends JPanel implements ActionListener {
         }
     };
 
+    // Method to start the game
     private void startGame() {
+        sound.playSound("StereoMadness.wav");
         timer.start(); // Start the main game timer
     }
 
+    // Main method to run the game
     public static void main(String[] args) {
         JFrame frame = new JFrame("Geometry Dash");
         GeometryDash game = new GeometryDash();
@@ -213,5 +234,6 @@ public class GeometryDash extends JPanel implements ActionListener {
         frame.setSize(WIDTH, HEIGHT);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        game.startGame(); // Call startGame method here to play sound and start the game
     }
 }

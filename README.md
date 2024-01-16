@@ -1,20 +1,18 @@
 # Geometry Dash
-<img src="./images/geometrydash_logo.png" alt="image" width="1000">
+![Geometry Dash Logo](./images/geometrydash_logo.png)
 
 ## Introduction
 
-Welcome to Geometry Dash, a simple Java game created using the Swing library in java. In this game, you control a jumping cube, trying to avoid spikes and score points.
+Welcome to **Geometry Dash**, an exciting Java game developed using the Swing library. In this thrilling adventure, you control a nimble cube, navigating through a challenging terrain filled with spikes, all while striving to achieve the highest score.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Make sure you have Java installed on your machine.
-- You need to download IntelliJ IDEA or VSCode to run this program.
-
+- Ensure that Java is installed on your machine.
+- Download and install IntelliJ IDEA or VSCode to run this game seamlessly.
 
 ### Installation
-
 
 1. Navigate to the project folder:
    ```bash
@@ -29,42 +27,41 @@ Welcome to Geometry Dash, a simple Java game created using the Swing library in 
 
 ## How to Play?
 
-- Press the **Spacebar** or click to make the cube jump.
-- Avoid the spikes to stay alive if possible to jump.
-- Press **R** to reset the game.
+- **Jump:** Press the **Spacebar** or click to make the cube jump.
+- **Avoid Spikes:** Navigate through the game, avoiding spikes to stay alive.
+- **Reset Game:** Press **R** to reset the game.
 
 ## Customization
 
-- Customize the game graphics by replacing the images in the `images` folder.
-- Scripts are listed on `src` folder.
-- Volume and sounds are listed on `sounds` folder.
+- **Graphics:** Customize the game visuals by replacing images in the `images` folder.
+- **Scripts:** Explore and modify game mechanics in the `src` folder.
+- **Audio:** Adjust volume levels and sounds in the `sounds` folder.
 
-### Files 
-These are the files located in the `src` folder.
+### Files
 
-- **Main.java**: This is the main class to run the game.
-- **GeometryDash**.java: The main class that represents the Geometry Dash game
-- **Cube.java**: Class representing the player's cube.
-- **Actor.java**: Class representing in-game actors, like spikes.
-- **ZRect.java**: Class representing a simple rectangle in cube class.
-- **Sound.java**: Class representing a sound in the game.
+Explore the key files in the `src` folder:
 
-## Acknowledge 
+- **Main.java:** The main class to run the game.
+- **GeometryDash.java:** The main class representing the Geometry Dash game.
+- **Cube.java:** Class representing the player's cube.
+- **Actor.java:** Class for in-game actors, such as spikes.
+- **ZRect.java:** Class for a simple rectangle used in the Cube class.
+- **Sound.java:** Class representing in-game sounds.
 
-Our sincere thanks to the contributors and communities that have played a vital role in shaping Geometry Dash:
+## Acknowledgments
 
-- **Developers**: The creative minds who brought Geometry Dash to life.
+Our heartfelt thanks to the following contributors:
+
+- **Developers:** The brilliant minds behind the creation of Geometry Dash.
   
-- **Open Source Community**: For invaluable resources and support that enhanced the game.
+- **Open Source Community:** For invaluable resources and continuous support.
 
-- **Designers & Sound Engineers**: The talented individuals responsible for the captivating visuals and immersive audio.
+- **Designers & Sound Engineers:** Talented individuals responsible for captivating visuals and immersive audio.
 
-- **Beta Testers**: Appreciation for meticulous testing and valuable feedback.
+- **Beta Testers:** Those who provided meticulous testing and valuable feedback.
 
-- **Community Contributors**: Everyone who shared ideas and actively participated in discussions.
+- **Community Contributors:** Everyone who shared ideas and actively participated in discussions.
 
-Geometry Dash is a collaborative effort, and your contributions have been instrumental in making the game what it is today.
+Geometry Dash is a collaborative effort, and your contributions have played a pivotal role in shaping this exhilarating gaming experience.
 
-
-### Have fun playing Geometry Dash! 
-
+### Have an exhilarating time playing Geometry Dash! 
