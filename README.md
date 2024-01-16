@@ -30,7 +30,7 @@ Welcome to Geometry Dash, a simple Java game created using the Swing library in 
 ## How to Play?
 
 - Press the **Spacebar** or click to make the cube jump.
-- Avoid the spikes to stay alive.
+- Avoid the spikes to stay alive if possible to jump.
 - Press **R** to reset the game.
 
 ## Customization
