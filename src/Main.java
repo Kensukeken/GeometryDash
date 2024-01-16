@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Geometry Dash");
         GeometryDash game = new GeometryDash();
-        Sound.playSound("stereo-madness.wav");
+        Sound.playSound("StereoMadness.wav");
         frame.add(game);
         frame.setSize(GeometryDash.WIDTH, GeometryDash.HEIGHT);
         frame.setVisible(true);
