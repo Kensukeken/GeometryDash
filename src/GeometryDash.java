@@ -108,10 +108,10 @@ public class GeometryDash extends JPanel implements ActionListener {
     private void KeyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE && !dead) {
             cube.jump();
-            sound.playSound("sounds/StereoMadness.wav");
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
             resetGame();
-            sound.stopSound();
+            sound.stopSound(); // Stop any currently playing sound
+            sound.playSound("sounds/StereoMadness.wav");
         }
     }
 
@@ -194,7 +194,8 @@ public class GeometryDash extends JPanel implements ActionListener {
         spike.update();
         if (spike.collidesWith(cube)) {
             dead = true;
-            sound.stopSound();
+            sound.stopSound(); // Stop any currently playing sound
+            sound.playSound("sounds/Explode.wav"); // Play Explode.wav when the cube dies
         }
         if (spike.getX() + spike.getWidth() <= 0) {
             spike.setX(WIDTH + new java.util.Random().nextInt(200));
@@ -205,12 +206,14 @@ public class GeometryDash extends JPanel implements ActionListener {
 
     // Method to reset the game state
     private void resetGame() {
+        timer.stop(); // Stop the existing timer
         for (Actor spike : spikes) {
             spike.setX(WIDTH + 200);
         }
         score = 0;
         attempt++;
         dead = false;
+        timer.start(); // Start a new timer
     }
 
     // Action listener for the timer before starting the game
