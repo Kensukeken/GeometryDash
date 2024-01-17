@@ -197,7 +197,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         }
         if (spike.getX() + spike.getWidth() <= 0) {
             spike.setX(WIDTH + new java.util.Random().nextInt(200));
-            float speedFactor = 1.5f;
+            float speedFactor = 0.5f;
             spike.setSpeed(spike.getSpeed() * speedFactor);
         }
     }

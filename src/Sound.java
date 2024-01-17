@@ -22,7 +22,7 @@ public class Sound {
         }
     }
 
-    // Add a new method to play sound from InputStream
+    // Added a new method to play sound from InputStream
     public void playSound(InputStream inputStream) {
         try {
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(inputStream);
