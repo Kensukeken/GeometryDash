@@ -1,8 +1,6 @@
 package src;
 // Sound.java
 
-// Sound.java
-
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
@@ -46,7 +44,6 @@ public class Sound {
     public void stopSound() {
         if (clip != null) {
             clip.stop();
-            clip.close();
         }
     }
 }

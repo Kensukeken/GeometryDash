@@ -194,11 +194,12 @@ public class GeometryDash extends JPanel implements ActionListener {
         spike.update();
         if (spike.collidesWith(cube)) {
             dead = true;
+            sound.stopSound();
         }
         if (spike.getX() + spike.getWidth() <= 0) {
             spike.setX(WIDTH + new java.util.Random().nextInt(200));
-            float speedFactor = 0.5f;
-            spike.setSpeed(spike.getSpeed() * speedFactor);
+            float speedSpikes = 0.5f;
+            spike.setSpeed(spike.getSpeed() * speedSpikes);
         }
     }
 
@@ -210,6 +211,7 @@ public class GeometryDash extends JPanel implements ActionListener {
         score = 0;
         attempt++;
         dead = false;
+        sound.playSound("sounds/Explode.wav");
     }
 
     // Action listener for the timer before starting the game
@@ -234,6 +236,6 @@ public class GeometryDash extends JPanel implements ActionListener {
         frame.setSize(WIDTH, HEIGHT);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        game.startGame(); // Call startGame method here to play sound and start the game
+        game.startGame();
     }
 }
