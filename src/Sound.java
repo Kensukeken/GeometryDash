@@ -1,13 +1,13 @@
 package src;
 // Sound.java
 
-import javax.sound.sampled.*;
-import java.io.File;
-import java.io.IOException;
+import javax.sound.sampled.*; // Import Sound sampled
+import java.io.File; // Import File
+import java.io.IOException; // Import IOException
 import java.io.InputStream; // Import InputStream
 
 public class Sound {
-    private Clip clip;
+    private Clip c;
 
     public void playSound(String filename) {
         try {
@@ -36,14 +36,15 @@ public class Sound {
 
     // Common method to play audio stream
     private void playAudioStream(AudioInputStream audioStream) throws LineUnavailableException, IOException {
-        clip = AudioSystem.getClip();
-        clip.open(audioStream);
-        clip.start();
+        c = AudioSystem.getClip();
+        c.open(audioStream);
+        c.start();
     }
 
+    // Method to stop the sound
     public void stopSound() {
-        if (clip != null) {
-            clip.stop();
+        if (c != null) {
+            c.stop();
         }
     }
 }

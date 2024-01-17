@@ -211,7 +211,6 @@ public class GeometryDash extends JPanel implements ActionListener {
         score = 0;
         attempt++;
         dead = false;
-        sound.playSound("sounds/Explode.wav");
     }
 
     // Action listener for the timer before starting the game
