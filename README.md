@@ -48,20 +48,5 @@ Explore the key files in the `src` folder:
 - **ZRect.java:** Class for a simple rectangle used in the Cube class.
 - **Sound.java:** Class representing in-game sounds.
 
-## Acknowledgments
-
-Our heartfelt thanks to the following contributors:
-
-- **Developers:** The brilliant minds behind the creation of Geometry Dash.
-  
-- **Open Source Community:** For invaluable resources and continuous support.
-
-- **Designers & Sound Engineers:** Talented individuals responsible for captivating visuals and immersive audio.
-
-- **Beta Testers:** Those who provided meticulous testing and valuable feedback.
-
-- **Community Contributors:** Everyone who shared ideas and actively participated in discussions.
-
-Geometry Dash is a collaborative effort, and your contributions have played a pivotal role in shaping this exhilarating gaming experience.
 
 ### Have an exhilarating time playing Geometry Dash! 

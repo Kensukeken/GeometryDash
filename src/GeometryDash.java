@@ -102,16 +102,16 @@ public class GeometryDash extends JPanel implements ActionListener {
     // Method to handle mouse clicks
     private void MouseClick() {
         cube.jump();
-        sound.playSound("StereoMadness.wav");
     }
 
     // Method to handle key presses
     private void KeyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE && !dead) {
             cube.jump();
-            sound.playSound("StereoMadness.wav");
+            sound.playSound("sounds/StereoMadness.wav");
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
             resetGame();
+            sound.stopSound();
         }
     }
 
@@ -222,7 +222,7 @@ public class GeometryDash extends JPanel implements ActionListener {
 
     // Method to start the game
     private void startGame() {
-        sound.playSound("StereoMadness.wav");
+        sound.playSound("sounds/StereoMadness.wav");
         timer.start(); // Start the main game timer
     }
 
