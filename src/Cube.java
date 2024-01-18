@@ -1,4 +1,4 @@
-/* Hia Al Saleh
+/* 
  * Date: 23/12/2023
  * Cube.java: The Cube class represents the player-controlled cube in the GeometryDash game. 
 */
