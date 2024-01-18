@@ -1,4 +1,4 @@
-/* Hia Al Saleh
+/* 
  * Date: 17/01/2024
  * Sound.java: Class representing in-game sounds.
  */
