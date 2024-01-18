@@ -1,4 +1,4 @@
-/* Hia Al Saleh
+/* 
  * Date: December 11, 2023
  * GeometryDash.java: This program represents the GeometryDash game. 
  */
