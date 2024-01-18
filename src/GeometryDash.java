@@ -1,6 +1,7 @@
-/* This program represents the GeometryDash game. 
- *  
-*/
+/* Hia Al Saleh
+ * Date: December 11, 2023
+ * GeometryDash.java: This program represents the GeometryDash game. 
+ */
 package src;
 
 import javax.swing.*;
@@ -151,10 +152,10 @@ public class GeometryDash extends JPanel implements ActionListener {
         g.fillRect(floor.getX(), floor.getY(), floor.getWidth(), floor.getHeight());
 
         for (Actor spike : spikes) {
-            spike.draw(g);
+            drawSpike(g, spike);
         }
 
-        cube.draw(g);
+        drawCube(g);
 
         g.setColor(Color.WHITE);
         g.drawString("Score: " + score, 40, 40);
@@ -170,6 +171,16 @@ public class GeometryDash extends JPanel implements ActionListener {
         g.drawString("Press 'R' key to play again. ", 130, 400);
     }
 
+    // Method to draw a spike
+    private void drawSpike(Graphics g, Actor spike) {
+        spike.draw(g);
+    }
+
+    // Method to draw the cube
+    private void drawCube(Graphics g) {
+        cube.draw(g);
+    }
+
     // Method to handle action events (timer ticks)
     public void actionPerformed(ActionEvent e) {
         if (!dead) {
@@ -182,7 +193,7 @@ public class GeometryDash extends JPanel implements ActionListener {
     private void updateGame() {
         cube.update();
         for (Actor spike : spikes) {
-            Spike(spike);
+            updateSpike(spike);
 
             if (spike.getX() < cube.getRight() && spike.getRight() > cube.getX()
                     && spike.getY() < cube.getBottom() && spike.getBottom() > cube.getY()) {
@@ -192,12 +203,11 @@ public class GeometryDash extends JPanel implements ActionListener {
     }
 
     // Method to update spike movement and check for collisions
-    private void Spike(Actor spike) {
+    private void updateSpike(Actor spike) {
         spike.update();
         if (spike.collidesWith(cube)) {
             dead = true;
             sound.stopSound();
-            sound.playSound("explode.wav");
         }
         if (spike.getX() + spike.getWidth() <= 0) {
             spike.setX(WIDTH + new java.util.Random().nextInt(200));
