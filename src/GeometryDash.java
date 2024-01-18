@@ -1,4 +1,6 @@
-/* This program represents the GeometryDash game. */
+/* This program represents the GeometryDash game. 
+ *  
+*/
 package src;
 
 import javax.swing.*;
@@ -58,7 +60,7 @@ public class GeometryDash extends JPanel implements ActionListener {
 
         // Initialize spikes, floor, cube, timer, and sound
         spikes.add(new Actor("images/spike.png", 550, 310));
-        spikes.add(new Actor("images/spike.png", 700, 310));
+        spikes.add(new Actor("images/spike.png", 800, 310));
         floor = new ZRect(0, 340, WIDTH, 3);
         cube = new Cube(floor);
         timer = new Timer(TIME_TICK, this);
@@ -194,12 +196,12 @@ public class GeometryDash extends JPanel implements ActionListener {
         spike.update();
         if (spike.collidesWith(cube)) {
             dead = true;
-            sound.stopSound(); // Stop any currently playing sound
-            sound.playSound("sounds/Explode.wav"); // Play Explode.wav when the cube dies
+            sound.stopSound();
+            sound.playSound("explode.wav");
         }
         if (spike.getX() + spike.getWidth() <= 0) {
             spike.setX(WIDTH + new java.util.Random().nextInt(200));
-            float speedSpikes = 0.5f;
+            float speedSpikes = 0.2f;
             spike.setSpeed(spike.getSpeed() * speedSpikes);
         }
     }
@@ -208,7 +210,7 @@ public class GeometryDash extends JPanel implements ActionListener {
     private void resetGame() {
         timer.stop(); // Stop the existing timer
         for (Actor spike : spikes) {
-            spike.setX(WIDTH + 200);
+            spike.setX(WIDTH);
         }
         score = 0;
         attempt++;
@@ -228,16 +230,5 @@ public class GeometryDash extends JPanel implements ActionListener {
     private void startGame() {
         sound.playSound("sounds/StereoMadness.wav");
         timer.start(); // Start the main game timer
-    }
-
-    // Main method to run the game
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Geometry Dash");
-        GeometryDash game = new GeometryDash();
-        frame.add(game);
-        frame.setSize(WIDTH, HEIGHT);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        game.startGame();
     }
 }
