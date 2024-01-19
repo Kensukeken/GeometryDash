@@ -1,7 +1,9 @@
-/* 
+/* ----------------------------------------------------------------------------------------
+ * Author: Kensukeken
  * Date: 23/12/2023
+ ------------------------------------------------------------------------------------------
  * Cube.java: The Cube class represents the player-controlled cube in the GeometryDash game. 
-*/
+-------------------------------------------------------------------------------------------*/
 
 package src;
 
@@ -10,7 +12,7 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 
 class Cube {
-    private static final int ROTATION_LIMIT = 90;
+    private static final int ROTATION_LIMIT = 360;
 
     private int x, y; // Coordinates of the cube
     private int width, height; // Dimensions of the cube's image
@@ -50,17 +52,19 @@ class Cube {
         if (y + height < floor.getY()) {
             ySpeed += GeometryDash.GRAVITY;
             y += ySpeed;
+
+            // Adjust rotation angle based on the jump velocity
+            if (isRotating) {
+                angle += 10;
+                if (angle >= ROTATION_LIMIT) {
+                    isRotating = false;
+                    angle = 0; // Reset the angle when rotation is complete
+                }
+            }
         } else {
             y = -height + floor.getY();
             ySpeed = 0;
-            if (isRotating) {
-                angle += 90;
-                if (angle >= ROTATION_LIMIT) {
-                    isRotating = false;
-                }
-            }
-            AffineTransform rot = new AffineTransform();
-            rot.rotate(angle, 90, 90);
+            isRotating = false; // Stop rotating when on the floor
         }
     }
 
