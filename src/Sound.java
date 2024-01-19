@@ -1,7 +1,9 @@
-/* 
+/* ----------------------------------------------
+ * Author: Kensukeken
  * Date: 17/01/2024
+ ------------------------------------------------
  * Sound.java: Class representing in-game sounds.
- */
+------------------------------------------------- */
 package src;
 
 import javax.sound.sampled.*; // Import Sound sampled
