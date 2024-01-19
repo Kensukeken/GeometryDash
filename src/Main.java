@@ -1,7 +1,9 @@
-/* Hia Al Saleh
+/*--------------------------------------------
+ * Author: Hia Al Saleh
  * Date: 03/01/2024
+----------------------------------------------
  * Main.java - The main class to run the game
- */
+---------------------------------------------- */
 package src;
 
 import javax.swing.*;

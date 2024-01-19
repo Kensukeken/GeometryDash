@@ -1,7 +1,9 @@
-/* Hia Al Saleh
+/* ----------------------------------------------------------------
+ * Author: Hia Al Saleh
  * Date: December 11, 2023
+ ------------------------------------------------------------------
  * GeometryDash.java: This program represents the GeometryDash game. 
- */
+ -----------------------------------------------------------------*/
 package src;
 
 import javax.swing.*;
@@ -61,7 +63,9 @@ public class GeometryDash extends JPanel implements ActionListener {
 
         // Initialize spikes, floor, cube, timer, and sound
         spikes.add(new Actor("images/spike.png", 550, 310));
-        spikes.add(new Actor("images/spike.png", 800, 310));
+        spikes.add(new Actor("images/spike.png", 700, 310));
+        spikes.add(new Actor("images/spike.png", 900, 310));
+        spikes.add(new Actor("images/spike.png", 920, 310));
         floor = new ZRect(0, 340, WIDTH, 3);
         cube = new Cube(floor);
         timer = new Timer(TIME_TICK, this);
@@ -202,6 +206,24 @@ public class GeometryDash extends JPanel implements ActionListener {
         score++;
     }
 
+    // Method to initialize spikes
+    private void Spikes() {
+        spikes.clear();
+
+        // Set the initial position for the first spike
+        int SpikeX = 550; // Set the desired initial X position
+        spikes.add(new Actor("images/spike.png", SpikeX, 310));
+
+        // Set the initial position for the second spike
+        SpikeX += 150; // Adjust the spacing between spikes if needed
+        spikes.add(new Actor("images/spike.png", SpikeX, 310));
+
+        for (int i = 0; i < 5; i++) {
+            SpikeX += 250; // Adjust the spacing between spikes if needed
+            spikes.add(new Actor("images/spike.png", SpikeX, 310));
+        }
+    }
+
     // Method to update spike movement and check for collisions
     private void updateSpike(Actor spike) {
         spike.update();
@@ -210,7 +232,7 @@ public class GeometryDash extends JPanel implements ActionListener {
             sound.stopSound();
         }
         if (spike.getX() + spike.getWidth() <= 0) {
-            spike.setX(WIDTH + new java.util.Random().nextInt(200));
+            spike.setX(WIDTH);
             float speedSpikes = 0.2f;
             spike.setSpeed(spike.getSpeed() * speedSpikes);
         }
@@ -219,9 +241,8 @@ public class GeometryDash extends JPanel implements ActionListener {
     // Method to reset the game state
     private void resetGame() {
         timer.stop(); // Stop the existing timer
-        for (Actor spike : spikes) {
-            spike.setX(WIDTH);
-        }
+        Spikes();
+
         score = 0;
         attempt++;
         dead = false;
