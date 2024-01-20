@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------------------------------------------------------------
- * Author: Hia Al Saleh
+ * Author: Kensukeken
  * Date: 03/01/2024
  * Feel free to see my github: https://github.com/Kensukeken/GeometryDash. [I did not put my real name on there, just a nickname :)].
 ------------------------------------------------------------------------------------------------------------------------------------
