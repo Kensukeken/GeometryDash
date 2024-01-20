@@ -1,5 +1,5 @@
 /* --------------------------------------------------------------------------------------------
- * Author: Hia Al Saleh
+ * Author: Kensukeken
  * Date: 26/12/2023
  * --------------------------------------------------------------------------------------------
  * Actor.java: The Actor class represents game elements such as spikes in the GeometryDash game.
