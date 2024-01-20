@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------
- * Author: Hia Al Saleh
+ * Author: Kensukeken
  * Date: December 11, 2023
  ------------------------------------------------------------------
  * GeometryDash.java: This program represents the GeometryDash game. 
