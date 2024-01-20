@@ -1,9 +1,10 @@
-/* ----------------------------------------------
+/* ----------------------------------------------------------------------------------------------------------
  * Author: Hia Al Saleh
  * Date: 17/01/2024
  ------------------------------------------------
- * Sound.java: Class representing in-game sounds.
-------------------------------------------------- */
+ * Sound.java: Class representing in-game sounds. 
+ * I've learned sound in this site https://www3.ntu.edu.sg/home/ehchua/programming/java/J8c_PlayingSound.html
+------------------------------------------------------------------------------------------------------------- */
 package src;
 
 import javax.sound.sampled.*; // Import Sound sampled

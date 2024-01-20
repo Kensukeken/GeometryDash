@@ -24,7 +24,7 @@ public class GeometryDash extends JPanel implements ActionListener {
     public static final int HEIGHT = 545;
     public static final int GRAVITY = 1;
     public static final int TIME_TICK = 2;
-    public static final int LOGO_SCREEN_DURATION = 5000; // Added 5 seconds before the game starts
+    public static final int LOGO_SCREEN_DURATION = 5000; // Added 5 seconds before the game starts in logo screen
 
     // Game variables
     private Timer timer;
@@ -215,11 +215,11 @@ public class GeometryDash extends JPanel implements ActionListener {
         spikes.add(new Actor("images/spike.png", SpikeX, 310));
 
         // Set the initial position for the second spike
-        SpikeX += 150; // Adjust the spacing between spikes if needed
+        SpikeX += 150;
         spikes.add(new Actor("images/spike.png", SpikeX, 310));
 
         for (int i = 0; i < 5; i++) {
-            SpikeX += 250; // Adjust the spacing between spikes if needed
+            SpikeX += 250;
             spikes.add(new Actor("images/spike.png", SpikeX, 310));
         }
     }
