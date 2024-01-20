@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------------------------------
- * Author: Hia Al Saleh
+ * Author: Kensukeken
  * Date: 25/12/2023
 ---------------------------------------------------------------------------------------------
  * ZRect.java: The ZRect class represents a simple rectangular shape in the GeometryDash game.
